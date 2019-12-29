@@ -1,0 +1,32 @@
+@import "./_base.scss";
+
+header {
+  align-items: center;
+  background-color: var(--blue);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 var(--gutter);
+  color: whitesmoke;
+}
+
+header nav {
+  padding: 0.5rem 1rem;
+}
+
+header nav a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.books-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  padding: var(--gutter);
+}
+
+.book-wrapper {
+  border: 1px solid var(--blue);
+  padding: 2rem;
+}

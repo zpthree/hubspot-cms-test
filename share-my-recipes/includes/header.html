@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="{{ page_meta.meta_description }}" />
+    <title>{{ page_meta.html_title }}</title>
+    {% if site_settings.favicon_src %}
+    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+    {% endif %} 
+
+    {{ standard_header_includes }}
+
+    <style>
+      
+    </style>
+  </head>
+  
+  <body>
+
+    <header>
+      <p>My Cool Site</p>
+      <nav>
+        {% for child in node.children %}
+          <a href="">{{ child.label }}</a>
+        {% endfor %}
+      </nav>
+    </header>

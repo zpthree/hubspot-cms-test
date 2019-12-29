@@ -1,0 +1,30 @@
+:root {
+  // colors
+  --blue: #2eafe6d0;
+  --red: #8e0000;
+  --green: #79f266;
+
+  // layout
+  --gutter: 2rem;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}

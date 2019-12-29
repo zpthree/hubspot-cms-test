@@ -1,0 +1,12 @@
+{
+  "name": "hubspot-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx hs watch --portal=6915638 share-my-recipes share-my-recipes"
+  },
+  "dependencies": {
+    "@hubspot/cms-cli": "^1.0.3"
+  }
+}

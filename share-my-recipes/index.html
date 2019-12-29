@@ -1,0 +1,19 @@
+{% include "./includes/header.html" %}
+{% set recipes = hubdb_table_rows(2035056) %}
+
+<div class="books-wrapper">
+
+  {% for recipe in recipes %}
+
+    <div class="book-wrapper">
+      
+      <h2>{{recipe.food_name}}</h2>
+      <p>{{recipe.chef}}</p>
+
+    </div>
+
+  {% endfor %}
+
+</div>
+
+{% include './includes/footer.html' %}
