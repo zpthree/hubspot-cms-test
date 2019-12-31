@@ -1,19 +1,39 @@
 {% include "./includes/header.html" %}
-{% set recipes = hubdb_table_rows(2035056) %}
 
-<div class="books-wrapper">
+{% if dynamic_page_hubdb_row %}
 
-  {% for recipe in recipes %}
-
-    <div class="book-wrapper">
-      
-      <h2>{{recipe.food_name}}</h2>
-      <p>{{recipe.chef}}</p>
-
+  <div class="single-recipe-page">
+    <a href="/">👈🏻 &nbsp; Go Back</a>
+    <div class="single-recipe-wrapper">
+      <h1>{{dynamic_page_hubdb_row.food_name}}</h1>
+      <p><strong>Created by:</strong> {{dynamic_page_hubdb_row.chef}}</p>
+  
+      <h3>Ingredients</h3>
+      {{dynamic_page_hubdb_row.ingredients}}
+  
+      <h3>Directions</h3>
+      {{dynamic_page_hubdb_row.cooking_directions}}
     </div>
+  </div>
 
-  {% endfor %}
+{% elif dynamic_page_hubdb_table_id %}
 
-</div>
+  <div class="recipes-wrapper">
+    {% for recipe in hubdb_table_rows(2035056) %}
+    
+    <div class="recipe-wrapper">
+      
+      <h2><a href="/{{recipe.hs_path}}">{{recipe.food_name}}</a></h2>
+      <p><strong>Created by:</strong> {{recipe.chef}}</p>
+
+      <a href="/{{recipe.hs_path}}">View recipe</a>
+      
+    </div>
+    
+    {% endfor %}
+    
+  </div>
+
+{% endif %}
 
 {% include './includes/footer.html' %}
