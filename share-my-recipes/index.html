@@ -5,14 +5,22 @@
   <div class="single-recipe-page">
     <a href="/">👈🏻 &nbsp; Go Back</a>
     <div class="single-recipe-wrapper">
-      <h1>{{dynamic_page_hubdb_row.food_name}}</h1>
-      <p><strong>Created by:</strong> {{dynamic_page_hubdb_row.chef}}</p>
-  
-      <h3>Ingredients</h3>
-      {{dynamic_page_hubdb_row.ingredients}}
-  
-      <h3>Directions</h3>
-      {{dynamic_page_hubdb_row.cooking_directions}}
+      <div class="image-wrapper">
+        <img 
+          src="{{dynamic_page_hubdb_row.image.url}}" 
+          alt="{{dynamic_page_hubdb_row.food_name}}"
+        >
+      </div>
+      <div class="recipe-content">
+        <h1>{{dynamic_page_hubdb_row.food_name}}</h1>
+        <p><strong>Created by:</strong> {{dynamic_page_hubdb_row.chef}}</p>
+    
+        <h3>Ingredients</h3>
+        {{dynamic_page_hubdb_row.ingredients}}
+    
+        <h3>Directions</h3>
+        {{dynamic_page_hubdb_row.cooking_directions}}
+      </div>
     </div>
   </div>
 
@@ -23,11 +31,18 @@
     
     <div class="recipe-wrapper">
       
-      <h2><a href="/{{recipe.hs_path}}">{{recipe.food_name}}</a></h2>
-      <p><strong>Created by:</strong> {{recipe.chef}}</p>
+      <div class="image-wrapper">
+        <a href="/{{recipe.hs_path}}">
+          <img src="{{recipe.image.url}}" alt="{{recipe.food_name}}">
+        </a>
+      </div>
+      <div class="recipe-info">
+        <h2><a href="/{{recipe.hs_path}}">{{recipe.food_name}}</a></h2>
+        <p><strong>Created by:</strong> {{recipe.chef}}</p>
 
-      <a href="/{{recipe.hs_path}}">View recipe</a>
-      
+        <a href="/{{recipe.hs_path}}">View recipe</a>
+      </div>
+        
     </div>
     
     {% endfor %}
